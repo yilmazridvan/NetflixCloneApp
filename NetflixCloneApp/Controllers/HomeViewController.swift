@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
     }
     
     private func configureNavBar() {
+        
         let image = UIImage(named: "netflixLogo")?.withRenderingMode(.alwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
       
@@ -54,6 +55,7 @@ class HomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
+        
     }
 }
 
@@ -101,6 +103,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 }
             }
+            
         case Sections.Upcoming.rawValue:
             APICaller.shared.getUpcomingMovies { result in
                 switch result {
@@ -110,6 +113,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 }
             }
+            
         case Sections.TopRated.rawValue:
             APICaller.shared.getTopRatedMovies { result in
                 switch result {
@@ -137,7 +141,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         header.textLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 10, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
         header.textLabel?.textColor = .white
-        header.textLabel?.text = header.textLabel?.text?.capitalizedFirstLetter()
+        header.textLabel?.text = header.textLabel?.text?.capitalized
 
     }
     
