@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(homeFeedTable)
@@ -37,7 +38,7 @@ class HomeViewController: UIViewController {
         
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 390))
         homeFeedTable.tableHeaderView = headerView
-        
+                
     }
     
     private func configureNavBar() {
@@ -73,9 +74,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.delegate = self
+        
         switch indexPath.section {
         case Sections.TrendingMovies.rawValue:
-            APICaller.shared.getTrendingMovies { result in
+            APICaller.shared.getTrendingMovie { result in
                 switch result {
                 case .success(let titles):
                     cell.configure(with: titles)
@@ -93,7 +96,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 }
             }
-            
+
         case Sections.Popular.rawValue:
             APICaller.shared.getPopularMovies { result in
                 switch result {
@@ -103,7 +106,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 }
             }
-            
+
         case Sections.Upcoming.rawValue:
             APICaller.shared.getUpcomingMovies { result in
                 switch result {
@@ -113,7 +116,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 }
             }
-            
+
         case Sections.TopRated.rawValue:
             APICaller.shared.getTopRatedMovies { result in
                 switch result {
@@ -156,5 +159,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
     
-   
+}
+
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    func CollectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in 
+            let vc = TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
