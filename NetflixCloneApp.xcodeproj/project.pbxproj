@@ -10,6 +10,8 @@
 		CC30714B2922B3F600790403 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30714A2922B3F600790403 /* YoutubeSearchResponse.swift */; };
 		CC30714D29240C8B00790403 /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30714C29240C8B00790403 /* TitlePreviewViewController.swift */; };
 		CC30714F2924158500790403 /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30714E2924158500790403 /* TitlePreviewViewModel.swift */; };
+		CC307152292815A000790403 /* NetflixCloneModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC3071502928159F00790403 /* NetflixCloneModel.xcdatamodeld */; };
+		CC307154292822CA00790403 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC307153292822CA00790403 /* DataPersistenceManager.swift */; };
 		CC3CE677291BC97000412D43 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3CE676291BC97000412D43 /* TitleViewModel.swift */; };
 		CC3CE67929203B0600412D43 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3CE67829203B0600412D43 /* SearchResultViewController.swift */; };
 		CC6E49FA2918220D001284C1 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E49F92918220D001284C1 /* TitleCollectionViewCell.swift */; };
@@ -27,7 +29,7 @@
 		CCC7C9CD290AA9110053E4A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7C9CC290AA9110053E4A3 /* HomeViewController.swift */; };
 		CCC7C9CF290AA9210053E4A3 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7C9CE290AA9210053E4A3 /* UpcomingViewController.swift */; };
 		CCC7C9D1290AA92F0053E4A3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7C9D0290AA92F0053E4A3 /* SearchViewController.swift */; };
-		CCC7C9D3290AA9390053E4A3 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7C9D2290AA9390053E4A3 /* DownloadsViewController.swift */; };
+		CCC7C9D3290AA9390053E4A3 /* WatchLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7C9D2290AA9390053E4A3 /* WatchLaterViewController.swift */; };
 		CCC7C9DA290D747E0053E4A3 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7C9D9290D747E0053E4A3 /* CollectionViewTableViewCell.swift */; };
 		CCC7C9DC290EBBF60053E4A3 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7C9DB290EBBF60053E4A3 /* HeroHeaderUIView.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		CC30714A2922B3F600790403 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		CC30714C29240C8B00790403 /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
 		CC30714E2924158500790403 /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
+		CC3071512928159F00790403 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		CC307153292822CA00790403 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		CC3CE676291BC97000412D43 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		CC3CE67829203B0600412D43 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		CC6E49F92918220D001284C1 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -53,7 +57,7 @@
 		CCC7C9CC290AA9110053E4A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CCC7C9CE290AA9210053E4A3 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		CCC7C9D0290AA92F0053E4A3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		CCC7C9D2290AA9390053E4A3 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		CCC7C9D2290AA9390053E4A3 /* WatchLaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterViewController.swift; sourceTree = "<group>"; };
 		CCC7C9D9290D747E0053E4A3 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		CCC7C9DB290EBBF60053E4A3 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +81,7 @@
 				CCC7C9CC290AA9110053E4A3 /* HomeViewController.swift */,
 				CCC7C9CE290AA9210053E4A3 /* UpcomingViewController.swift */,
 				CCC7C9D0290AA92F0053E4A3 /* SearchViewController.swift */,
-				CCC7C9D2290AA9390053E4A3 /* DownloadsViewController.swift */,
+				CCC7C9D2290AA9390053E4A3 /* WatchLaterViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -122,6 +126,7 @@
 				CCC7C9BF290966DA0053E4A3 /* Assets.xcassets */,
 				CCC7C9C1290966DA0053E4A3 /* LaunchScreen.storyboard */,
 				CCC7C9C4290966DA0053E4A3 /* Info.plist */,
+				CC3071502928159F00790403 /* NetflixCloneModel.xcdatamodeld */,
 			);
 			path = NetflixCloneApp;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				CC9A5A3A29140157004233E3 /* APICaller.swift */,
+				CC307153292822CA00790403 /* DataPersistenceManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -260,15 +266,17 @@
 				CC6E4A06291AC698001284C1 /* TitleTableViewCell.swift in Sources */,
 				CCC7C9D1290AA92F0053E4A3 /* SearchViewController.swift in Sources */,
 				CC6E49FA2918220D001284C1 /* TitleCollectionViewCell.swift in Sources */,
+				CC307154292822CA00790403 /* DataPersistenceManager.swift in Sources */,
 				CCC7C9BB290966D90053E4A3 /* MainTabBarViewController.swift in Sources */,
 				CCC7C9DA290D747E0053E4A3 /* CollectionViewTableViewCell.swift in Sources */,
 				CC9A5A3B29140157004233E3 /* APICaller.swift in Sources */,
 				CCC7C9DC290EBBF60053E4A3 /* HeroHeaderUIView.swift in Sources */,
-				CCC7C9D3290AA9390053E4A3 /* DownloadsViewController.swift in Sources */,
+				CCC7C9D3290AA9390053E4A3 /* WatchLaterViewController.swift in Sources */,
 				CCC7C9B7290966D90053E4A3 /* AppDelegate.swift in Sources */,
 				CC9A5A3F29153699004233E3 /* Extensions.swift in Sources */,
 				CCC7C9B9290966D90053E4A3 /* SceneDelegate.swift in Sources */,
 				CC30714B2922B3F600790403 /* YoutubeSearchResponse.swift in Sources */,
+				CC307152292815A000790403 /* NetflixCloneModel.xcdatamodeld in Sources */,
 				CCC7C9CF290AA9210053E4A3 /* UpcomingViewController.swift in Sources */,
 				CC30714F2924158500790403 /* TitlePreviewViewModel.swift in Sources */,
 				CC9A5A3D291408DC004233E3 /* Title.swift in Sources */,
@@ -507,6 +515,19 @@
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CC3071502928159F00790403 /* NetflixCloneModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CC3071512928159F00790403 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = CC3071512928159F00790403 /* CoreData.xcdatamodel */;
+			path = NetflixCloneModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CCC7C9AB290966D90053E4A3 /* Project object */;
 }
