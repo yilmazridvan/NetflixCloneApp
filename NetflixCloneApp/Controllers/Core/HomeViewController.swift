@@ -60,14 +60,19 @@ class HomeViewController: UIViewController {
     
     private func configureNavBar() {
         
-        let image = UIImage(named: "netflixLogo")?.withRenderingMode(.alwaysOriginal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
-      
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "camera.aperture"),
+            style: .done,
+            target: self,
+            action: nil)
+        
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
             UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
         ]
         navigationController?.navigationBar.tintColor = .white
+        
     }
     
     override func viewDidLayoutSubviews() {

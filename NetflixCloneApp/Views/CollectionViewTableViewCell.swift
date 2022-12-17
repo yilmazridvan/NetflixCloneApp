@@ -31,7 +31,6 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .systemPink
         contentView.addSubview(collectionView)
         
         collectionView.delegate = self
@@ -94,7 +93,7 @@ extension CollectionViewTableViewCell: UICollectionViewDataSource, UICollectionV
                 let title = self?.titles[indexPath.row]
                 guard let titleOverview = title?.overview else {return}
                 guard let strongSelf = self else {return}
-                let viewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: titleOverview)
+                let viewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: titleOverview, posterPath: title?.poster_path ?? "")
                 self?.delegate?.CollectionViewTableViewCellDidTapCell(strongSelf, viewModel: viewModel )
             case .failure(let error):
                 print(error.localizedDescription)

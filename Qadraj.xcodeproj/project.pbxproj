@@ -225,7 +225,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CCC7C9AE290966D90053E4A3 /* Build configuration list for PBXProject "NetflixCloneApp" */;
+			buildConfigurationList = CCC7C9AE290966D90053E4A3 /* Build configuration list for PBXProject "Qadraj" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -472,7 +472,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CCC7C9AE290966D90053E4A3 /* Build configuration list for PBXProject "NetflixCloneApp" */ = {
+		CCC7C9AE290966D90053E4A3 /* Build configuration list for PBXProject "Qadraj" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CCC7C9C5290966DA0053E4A3 /* Debug */,

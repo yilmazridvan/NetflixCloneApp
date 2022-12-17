@@ -69,7 +69,7 @@ class SearchResultViewController: UIViewController, UICollectionViewDelegate, UI
         APICaller.shared.getMovie(with: title.title ?? "") { [weak self] result in
             switch result {
             case .success(let videoElement):
-                self?.delegate?.searchResultsViewControllerDidTapItem(TitlePreviewViewModel(title: title.title ?? "", youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                self?.delegate?.searchResultsViewControllerDidTapItem(TitlePreviewViewModel(title: title.title ?? "", youtubeView: videoElement, titleOverview: title.overview ?? "", posterPath: title.poster_path ?? ""))
             case.failure(let error):
                 print(error.localizedDescription)
             }

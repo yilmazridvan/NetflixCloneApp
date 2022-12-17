@@ -10,8 +10,6 @@ import WebKit
 
 class TitlePreviewViewController: UIViewController {
     
-    
-    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,14 +26,15 @@ class TitlePreviewViewController: UIViewController {
         return label
     }()
     
-    private let downloadButton: UIButton = {
-        let button = UIButton()
+    private let watchLaterButton: UIButton = {
+        let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .red
-        button.setTitle("Download", for: .normal)
+        button.setTitle("Watch Later", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         return button
     }()
     
@@ -45,7 +44,9 @@ class TitlePreviewViewController: UIViewController {
         return webView
         
     }()
-
+    
+    private var posterPath: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,10 +54,30 @@ class TitlePreviewViewController: UIViewController {
         view.addSubview(webView)
         view.addSubview(titleLabel)
         view.addSubview(overviewLabel)
-        view.addSubview(downloadButton)
+        view.addSubview(watchLaterButton)
         
+        watchLaterButton.addTarget(self, action: #selector(didTapWatchLaterButton), for: .touchUpInside)
+            
         configureConstraints()
 
+    }
+    
+    @objc private func didTapWatchLaterButton() {
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let item = TitleItem(context: context)
+
+        item.title = titleLabel.text
+        item.poster_path = posterPath
+
+            do {
+                try context.save()
+                NotificationCenter.default.post(name: NSNotification.Name("Added"), object: nil)
+                print("downloaded database")
+            } catch { }
     }
     
     func configureConstraints() {
@@ -78,10 +99,10 @@ class TitlePreviewViewController: UIViewController {
             overviewLabel.heightAnchor.constraint(equalToConstant: 250)
         ]
         let downloadButtonConstraints = [
-            downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 20),
-            downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            downloadButton.widthAnchor.constraint(equalToConstant: 140),
-            downloadButton.heightAnchor.constraint(equalToConstant: 40),
+            watchLaterButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 20),
+            watchLaterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            watchLaterButton.widthAnchor.constraint(equalToConstant: 140),
+            watchLaterButton.heightAnchor.constraint(equalToConstant: 40),
         ]
         
         NSLayoutConstraint.activate(webViewConstraints)
@@ -93,6 +114,7 @@ class TitlePreviewViewController: UIViewController {
     func configure(with model: TitlePreviewViewModel) {
         titleLabel.text = model.title
         overviewLabel.text = model.titleOverview
+        posterPath = model.posterPath
         
         guard let url = URL(string: "https://youtube.com/embed/\(model.youtubeView.id.videoId)") else {return}
         

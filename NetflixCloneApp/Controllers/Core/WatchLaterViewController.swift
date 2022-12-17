@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DownloadsViewController: UIViewController {
+class WatchLaterViewController: UIViewController {
     
     private var titles: [TitleItem] = [TitleItem]()
     
@@ -57,7 +57,7 @@ class DownloadsViewController: UIViewController {
     
 }
 
-extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
+extension WatchLaterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
@@ -83,7 +83,7 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
             DataPersistenceManager.shared.deleteTitleWith(model: titles[indexPath.row]) { [weak self] result in
                 switch result {
                 case.success():
-                    print("Deleted from the database")
+                    print("Deleted from the core data")
                 case.failure(let error):
                     print(error.localizedDescription)
                 }
@@ -107,7 +107,7 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
             case .success(let videoElement):
                 DispatchQueue.main.async {
                     let vc = TitlePreviewViewController()
-                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? "", posterPath: title.poster_path ?? ""))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             case.failure(let error):

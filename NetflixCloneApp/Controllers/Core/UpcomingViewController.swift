@@ -82,7 +82,7 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
             case .success(let videoElement):
                 DispatchQueue.main.async {
                     let vc = TitlePreviewViewController()
-                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? "", posterPath: title.poster_path ?? ""))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             case.failure(let error):
